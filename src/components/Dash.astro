@@ -1,0 +1,12 @@
+---
+export interface Props {
+  className?: string
+}
+
+const { className } = Astro.props;
+---
+
+<div
+  id='dash'
+  class={`relative w-[40px] h-[4px] border-2 border-primary bg-primary rounded-xl ${className}`}
+/>

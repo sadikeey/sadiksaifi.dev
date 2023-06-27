@@ -1,32 +1,17 @@
 {
   "name": "sadiksaifi.dev",
-  "version": "0.2.0",
-  "private": true,
   "type": "module",
-  "dependencies": {
-    "@emailjs/browser": "^3.10.0",
-    "emailjs": "^4.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-router-dom": "^6.8.1",
-    "typeface-roboto": "^1.1.13"
-  },
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "@types/react": "^18.0.32",
-    "@types/react-dom": "^18.0.11",
-    "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.0.3",
-    "vite": "^4.2.1"
+  "dependencies": {
+    "@astrojs/tailwind": "^4.0.0",
+    "astro": "^2.7.0",
+    "tailwindcss": "^3.3.2"
   }
 }

@@ -1,9 +1,18 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props
+import Footer from '../components/Footer.astro'
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sadik Saifi - Web Developer</title>
+		<title>{title}</title>
     <meta name="description" content="I am Sadik Saifi, a web developer. This is my portfolio website where you can find information about me and my projects." />
     <meta name="keywords" content="Sadik Saifi, Web Developer, sadikeey, Sadik Saifi Website, sadiksaifi.dev, portfolio website" />
     <meta name="author" content="Sadik Saifi" />
@@ -13,16 +22,16 @@
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Sadik Saifi - Web Developer" />
     <meta property="og:description" content="I am Sadik Saifi, a web developer. This is my portfolio website where you can find information about me and my projects." />
-    <meta property="og:image" content="https://www.sadiksaifi.dev/assets/favicon.svg" />
+    <meta property="og:image" content="https://www.sadiksaifi.dev/favicon.svg" />
     <meta property="og:url" content="https://www.sadiksaifi.dev/" />
     <meta property="og:type" content="website" />
     <!-- Twitter card meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sadik Saifi - Web Developer" />
     <meta name="twitter:description" content="I am Sadik Saifi, a web developer. This is my portfolio website where you can find information about me and my projects." />
-    <meta name="twitter:image" content="https://www.sadiksaifi.dev/assets/favicon.svg" />
+    <meta name="twitter:image" content="https://www.sadiksaifi.dev/favicon.svg" />
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYJVY5XRNC"></script>
     <script>
@@ -48,8 +57,33 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <slot />
+    <Footer />
   </body>
 </html>
 
+<style is:global>
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  @apply bg-background;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+}
+</style>

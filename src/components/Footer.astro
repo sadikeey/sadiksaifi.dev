@@ -1,0 +1,11 @@
+---
+import Dash from "./Dash.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class='px-10 pb-10 text-altforeground text-sm w-full text-center'>
+  <Dash className='mx-auto m-6'/>
+  <p>&#169 Copyright <span>{year}</span>.</p>
+  <p>Designed and Developed by Sadik Saifi</p>
+</footer>

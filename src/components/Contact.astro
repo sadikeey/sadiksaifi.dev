@@ -1,0 +1,32 @@
+---
+import Dash from "./Dash.astro";
+import Required from "./Required.astro";
+---
+
+<section id='contact' class='flex flex-col w-full mt-20 item-center text-foreground min-h-screen'>
+  <h1 class='text-3xl md:text-4xl mx-auto font-extrabold uppercase tracking-[0.4rem]'>
+    Contact
+  </h1>
+  <Dash className='mx-auto my-6' />
+  <p class="text-center text-sm text-altforeground">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p>
+  <form class='flex flex-col gap-2 w-full md:w-[80%] mx-auto m-10 p-6 md:p-8 bg-altbackground rounded-xl'>
+    <div class="flex flex-col">
+      <label for='name' class='text-sm font-bold text-altforeground'>Name<Required /></label>
+      <input type='text' name='user_name' class='rounded-lg p-4 my-2 text-sm bg-background text-foreground font-extrabold' placeholder="Enter Your Name" required />
+    </div>
+    <div class="flex flex-col">
+      <label for='email' class='text-sm font-bold text-altforeground'>Email<Required /></label>
+      <input type='email' name='user_email' class='rounded-lg p-4 my-2 text-sm bg-background text-foreground font-extrabold' placeholder="Enter Your Email" required />
+    </div>
+    <div class="flex flex-col">
+      <label for='message' class='text-sm font-bold text-altforeground'>Message<Required /></label>
+      <textarea name='user_message' id='message' class='rounded-lg p-4 my-2 h-52 text-sm bg-background resize-none text-foreground font-extrabold' placeholder="Enter Your Message" required />
+    </div>
+    <p class='hidden'>Message Sent Successfully!</p>
+    <button 
+      class='px-16 rounded-lg text-sm md:text-lg font-bold uppercase mt-4 py-4 bg-primary text-foreground hover:bg-altforeground hover:text-background'
+    >
+      Submit
+    </button>
+  </form>
+</section>

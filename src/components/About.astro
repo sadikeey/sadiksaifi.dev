@@ -1,0 +1,84 @@
+---
+import SkillButton from "./SkillButton.astro"
+import Dash from "./Dash.astro"
+
+const navigationLinks = [
+  {
+    id: 1,
+    name: 'Home',
+    path: '/#home',
+  },
+  {
+    id: 2,
+    name: 'About',
+    path: '/#about',
+  },
+  {
+    id: 3,
+    name: 'Blog',
+    path: 'https://blog.sadiksaifi.dev',
+  },
+  {
+    id: 4,
+    name: 'Contact',
+    path: '/#contact',
+  },
+]
+
+const skillButtonItems = [
+  'React',
+  'TypeScript',
+  'Redux',
+  'Tailwind',
+  'JavaScript',
+  'Node.Js',
+  'Express.Js',
+  'MongoDB',
+  'HTML',
+  'CSS',
+  'Git',
+  'Github',
+]
+---
+
+<div
+  id='about'
+  class='md:pt-40 pt-20 md:pb-20 text-foreground flex flex-col items-center w-full min-h-screen'
+>
+  <h1 class='text-3xl md:text-4xl font-extrabold mb-5 md:mb-4 uppercase tracking-[0.4rem]'>
+    About Me
+  </h1>
+  <Dash />
+  <p class='leading-8 text-sm mt-4 md:mt-6 md:text-xl text-altforeground text-center md:px-[7vw]'>
+    Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
+  </p>
+  <section
+    id='about-info'
+    class='flex flex-col md:flex-row mt-8 md:mt-28 md:justify-evenly w-full mx-auto'
+  >
+    <article id='about-main' class='md:px-10 md:w-[50vw] my-8'>
+      <h1 class='text-2xl font-extrabold text-foreground mb-2'>
+        Get to know me!
+      </h1>
+      <Dash />
+      <p class='leading-8 text-sm mt-6 md:mt-6 md:text-xl text-altforeground flex flex-col gap-4'>
+        <span class='block'>
+          I'm a <span class='font-bold text-foreground'> Frontend Web Developer</span> ,building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out usefull articles in the <a class='font-bold text-foreground hover:text-primary' href={navigationLinks[0].path}> Blog</a> page.</span>
+        <span>
+          I'm open to Job opportunities where I can contribute, learn and
+          grow. If you have a good opportunity that matches my skills and
+          experience then don't hesitate to <a class='text-foreground font-bold hover:text-primary' href={navigationLinks[3].path}> contact me</a>.</span></p>
+    </article>
+    <article id='skills' class='md:w-[45vw] my-8 flex flex-col'>
+      <h1 class='text-2xl font-extrabold text-foreground mb-2'>
+        Tech Stack
+      </h1>
+      <Dash />
+      <div class='flex flex-wrap gap-4 mt-8 items-end'>
+        {skillButtonItems.map((item) => (
+          <SkillButton key={item} name={item} />
+        ))}
+      </div>
+    </article>
+  </section>
+</div>
