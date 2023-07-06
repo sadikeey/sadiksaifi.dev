@@ -5,6 +5,7 @@ export interface Props {
 
 const { title } = Astro.props
 import Footer from '../components/Footer.astro'
+import Header from '../components/Header.jsx';
 ---
 
 <!DOCTYPE html>
@@ -57,6 +58,7 @@ import Footer from '../components/Footer.astro'
     </script>
   </head>
   <body>
+    <Header />
     <slot />
     <Footer />
   </body>
